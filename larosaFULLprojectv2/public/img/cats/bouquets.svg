@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
+  <defs><clipPath id="c"><circle cx="80" cy="80" r="80"/></clipPath></defs>
+  <g clip-path="url(#c)"><rect width="160" height="160" fill="#ffe3ea"/>
+    <path d="M62 92 L80 138 L98 92 Q80 102 62 92 Z" fill="#d9a066"/>
+    <g>
+    <circle cx="64" cy="74" r="15" fill="#a41831"/>
+    <circle cx="71.9" cy="76.2" r="8.3" fill="#c81d3c"/><circle cx="68.2" cy="81.1" r="8.3" fill="#c81d3c"/><circle cx="58.7" cy="80.4" r="8.3" fill="#c81d3c"/><circle cx="55.9" cy="75.6" r="8.3" fill="#c81d3c"/><circle cx="58.2" cy="68.2" r="8.3" fill="#c81d3c"/><circle cx="63.3" cy="65.8" r="8.3" fill="#c81d3c"/><circle cx="69.9" cy="68.3" r="8.3" fill="#c81d3c"/>
+    <circle cx="64" cy="74" r="9.3" fill="#e02043"/>
+    <circle cx="64" cy="74" r="5.1" fill="#b01a35"/>
+    <circle cx="61.75" cy="71.75" r="2.0" fill="#ff2751"/>
+  </g><g>
+    <circle cx="96" cy="74" r="15" fill="#c55771"/>
+    <circle cx="104.1" cy="75.6" r="8.3" fill="#f06a8a"/><circle cx="100.0" cy="81.2" r="8.3" fill="#f06a8a"/><circle cx="91.9" cy="81.2" r="8.3" fill="#f06a8a"/><circle cx="87.8" cy="74.7" r="8.3" fill="#f06a8a"/><circle cx="90.4" cy="67.9" r="8.3" fill="#f06a8a"/><circle cx="96.7" cy="65.8" r="8.3" fill="#f06a8a"/><circle cx="103.6" cy="70.8" r="8.3" fill="#f06a8a"/>
+    <circle cx="96" cy="74" r="9.3" fill="#ff779b"/>
+    <circle cx="96" cy="74" r="5.1" fill="#d35d79"/>
+    <circle cx="93.75" cy="71.75" r="2.0" fill="#ff8fba"/>
+  </g><g>
+    <circle cx="80" cy="56" r="16" fill="#b82b4b"/>
+    <circle cx="88.7" cy="57.5" r="8.8" fill="#e0355c"/><circle cx="82.6" cy="64.4" r="8.8" fill="#e0355c"/><circle cx="74.6" cy="63.0" r="8.8" fill="#e0355c"/><circle cx="71.7" cy="59.0" r="8.8" fill="#e0355c"/><circle cx="73.7" cy="49.9" r="8.8" fill="#e0355c"/><circle cx="78.5" cy="47.3" r="8.8" fill="#e0355c"/><circle cx="86.1" cy="49.7" r="8.8" fill="#e0355c"/>
+    <circle cx="80" cy="56" r="9.9" fill="#fb3b67"/>
+    <circle cx="80" cy="56" r="5.4" fill="#c52f51"/>
+    <circle cx="77.6" cy="53.6" r="2.1" fill="#ff487c"/>
+  </g>
+    <path transform="translate(52 84) rotate(-160)"
+    d="M0 0 C 9 -8.1, 16.2 -3.6, 18 0 C 16.2 3.6, 9 8.1, 0 0 Z"
+    fill="#3e7d4f"/><path transform="translate(108 84) rotate(-20)"
+    d="M0 0 C 9 -8.1, 16.2 -3.6, 18 0 C 16.2 3.6, 9 8.1, 0 0 Z"
+    fill="#3e7d4f"/></g>
+</svg>
