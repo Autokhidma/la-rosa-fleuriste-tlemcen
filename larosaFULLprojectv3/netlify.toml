@@ -1,0 +1,23 @@
+# La Rosa Fleuriste Tlemcen — Netlify
+#
+# Netlify héberge la BOUTIQUE en statique (dossier public/). La boutique
+# fonctionne alors sans backend : catalogue chargé depuis public/data/catalog.json
+# et commandes envoyées au fleuriste via WhatsApp.
+#
+# ⚠️ Le panneau admin (/admin) et l'enregistrement des commandes en base
+# nécessitent le serveur Node (Express). Pour l'admin, déployez plutôt sur
+# Vercel (voir vercel.json) ou un hébergeur Node persistant (VPS, Render…).
+
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404

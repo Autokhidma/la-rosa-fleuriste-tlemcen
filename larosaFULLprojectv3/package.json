@@ -1,0 +1,23 @@
+{
+  "name": "la-rosa-fleuriste-tlemcen",
+  "version": "1.0.0",
+  "description": "Site web complet de La Rosa Fleuriste Tlemcen — boutique en ligne + panneau d'administration",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "build": "node scripts/gen-images.js && node scripts/export-catalog.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.17.4",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.2",
+    "multer": "^1.4.5-lts.2"
+  },
+  "license": "UNLICENSED",
+  "private": true
+}

@@ -1,0 +1,80 @@
+/**
+ * Exporte le catalogue de démonstration en JSON statique :
+ *   public/data/catalog.json
+ *
+ * Permet à la boutique de fonctionner en 100 % statique (Netlify, Vercel,
+ * GitHub Pages, simple glisser-déposer du dossier public/) sans backend :
+ * si l'API /api/* n'est pas joignable, le front charge ce fichier et bascule
+ * la commande vers WhatsApp. Régénéré au build (voir package.json / vercel.json).
+ */
+const fs = require('fs');
+const path = require('path');
+
+const parse = (row) => ({
+  id: row.id,
+  name: row.name,
+  category: row.category,
+  description: row.description,
+  special: row.special,
+  price: row.price,
+  images: JSON.parse(row.images || '[]'),
+  sizes: JSON.parse(row.sizes || '[]'),
+  colors: JSON.parse(row.colors || '[]'),
+  best_seller: !!row.best_seller,
+  rating: row.rating ?? 4.8,
+  rating_count: row.rating_count ?? 0,
+});
+
+const seed = require('../src/seed-products');
+const products = seed.map((p, i) => parse({ ...p, id: i + 1 }));
+
+const zones = [
+  { id: 1, name: 'Tlemcen Centre', fee: 300, delay: 'Livraison le jour même', active: 1 },
+  { id: 2, name: 'Mansourah', fee: 400, delay: 'Livraison le jour même', active: 1 },
+  { id: 3, name: 'Chetouane', fee: 400, delay: 'Livraison le jour même', active: 1 },
+  { id: 4, name: 'Beni Mester', fee: 500, delay: 'Livraison le jour même', active: 1 },
+  { id: 5, name: 'Hennaya', fee: 500, delay: 'Livraison le jour même', active: 1 },
+  { id: 6, name: 'Remchi', fee: 600, delay: 'Livraison sous 24h', active: 1 },
+  { id: 7, name: 'Maghnia', fee: 800, delay: 'Livraison sous 24h', active: 1 },
+  { id: 8, name: 'Autre wilaya (Yalidine)', fee: 1200, delay: 'Livraison 2 à 5 jours', active: 1 },
+];
+
+const settings = {
+  shop_name: 'La Rosa Fleuriste Tlemcen',
+  tagline: 'Fleuriste N°01 à Tlemcen',
+  tagline_ar: 'لاروزا تلمسان ترحب بكم',
+  about:
+    "La Rosa Fleuriste Tlemcen compose des bouquets et créations florales qui racontent vos émotions : amour, mariage, naissance, félicitations. Chaque pièce est préparée à la main avec des fleurs fraîches, au cœur de Tlemcen.",
+  phone: '+213 000 00 00 00',
+  whatsapp: '+213 000 00 00 00',
+  instagram: 'https://www.instagram.com/la_rosa_fleuriste_tlemcen/',
+  facebook: 'https://www.facebook.com/people/La-Rosa/100091832552880/',
+  address: 'Tlemcen, Algérie',
+  map_url: 'https://maps.google.com/?q=La+Rosa+Fleuriste+Tlemcen',
+  hours: 'Tous les jours : 9h00 – 20h00',
+  currency: 'DA',
+};
+
+settings.hero_image = '/img/hero-bouquet.svg';
+settings.logo_image = '/img/logo.svg';
+
+const categories = [
+  ['Bouquets', '💐', '/img/cats/bouquets.svg'],
+  ['Box & Paniers', '🎁', '/img/cats/box.svg'],
+  ['Roses Éternelles', '🌹', '/img/cats/eternelle.svg'],
+  ['Boules de neige', '❄️', '/img/cats/boule.svg'],
+  ['Nounours', '🧸', '/img/cats/nounours.svg'],
+  ['Montres', '⌚', '/img/cats/montre.svg'],
+  ['Parfums', '🌸', '/img/cats/parfum.svg'],
+  ['Mariage', '💍', '/img/cats/mariage.svg'],
+  ['Occasions', '🎀', '/img/cats/occasions.svg'],
+  ['Plantes', '🪴', '/img/cats/plantes.svg'],
+].map(([name, emoji, icon], i) => ({ id: i + 1, name, emoji, icon, sort_order: i + 1, active: 1 }));
+
+const OUT = path.join(__dirname, '..', 'public', 'data');
+fs.mkdirSync(OUT, { recursive: true });
+fs.writeFileSync(
+  path.join(OUT, 'catalog.json'),
+  JSON.stringify({ settings, products, zones, categories, events: [] }, null, 2)
+);
+console.log('✔ public/data/catalog.json généré');
