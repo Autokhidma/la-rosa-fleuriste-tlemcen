@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 160">
-  <defs><clipPath id="c"><circle cx="80" cy="80" r="80"/></clipPath></defs>
-  <g clip-path="url(#c)"><rect width="160" height="160" fill="#fdf1f5"/>
-    <rect x="66" y="16" width="28" height="128" rx="13" fill="#e8a87c"/>
-    <circle cx="80" cy="80" r="34" fill="#f3c8a4"/><circle cx="80" cy="80" r="27" fill="#fdf6ec"/>
-    <path d="M80 80 V62 M80 80 L93 88" stroke="#43202e" stroke-width="3.4" stroke-linecap="round"/>
-    <circle cx="80" cy="80" r="3" fill="#d4a017"/></g>
-</svg>
